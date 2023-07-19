@@ -33,7 +33,13 @@ urlpatterns = [
 ![Empty Swagger UI example](docs/empty-swagger-ui.png)
 
 ### Configure
-
+now you have an rest app up and running you can configure it as you want. addtionally for django rest framework configuration and drf_yasg configuration you have our sdrf configs you can make with these default values
+| config variable name | default value | description |
+| REST_APP_NAME | `Weather API` | the app name used in swagger docs view |
+| REST_APP_VERSION | `v1` | the api version used in swagger docs view |
+| REST_APP_CREATOR | ``{'name': '','email': '','url': ''}`` | the contact information for communicating the rest app creator used in swagger docs view |
+| REST_APP_BASE_URL | `rest` | the base url that the swagger docs will be viewd on and a prefix for default api endpoint |
 ### Build API Endpoints
+
 
 

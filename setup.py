@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='sdrf',
-    version='0.0.5',
+    version='0.0.6',
     author='Hussein Anabtawi',
     description='Simple rest framework an abstraction that combines django rest framework with drf_yasg ',
     long_description='Simple rest framework is an abstraction for building rest api with well written documentations ',

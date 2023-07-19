@@ -5,7 +5,7 @@ from rest_framework.serializers import Serializer
 from rest_framework.authentication import BaseAuthentication
 from rest_framework.permissions import IsAuthenticated, BasePermission
 from django.conf import settings
-
+from sdrf.utils.settings_utils import get_settings_value
 
 class APIEndpointConfig:
     def __init__(self, name: str) -> None:
@@ -25,8 +25,8 @@ class APIEndpointConfig:
     responses: Dict = {}
     tags: List[str] = []
     request_body: Schema = None
-    base_url: str = settings.REST_APP_BASE_URL
-    rest_api_version = settings.REST_APP_VERSION
+    base_url: str = get_settings_value('REST_APP_BASE_URL','rest')
+    rest_api_version = get_settings_value('REST_APP_VERSION','v1')
     endpoint: str = ''
     full_route: str = ''
     deprecated: bool = False

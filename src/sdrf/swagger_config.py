@@ -3,16 +3,9 @@ from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 from rest_framework import permissions
 from django.conf import settings
-
-try:
-    APP_TITLE = settings.REST_APP_NAME
-except AttributeError:
-    APP_TITLE = 'Weather API'
-
-try:
-    APP_VERSION = settings.REST_APP_VERSION
-except AttributeError:
-    APP_VERSION = 'v1'
+from sdrf.utils.settings_utils import get_settings_value
+APP_TITLE = get_settings_value('REST_APP_NAME','Weather API')
+APP_VERSION = get_settings_value('REST_APP_VERSION','v1')
 APP_CREATOR = {
         'name': '',
         'email': '',
