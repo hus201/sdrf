@@ -14,5 +14,5 @@ classifiers = [
 ]
 
 [project.urls]
-"Homepage" = ""
-"Bug Tracker" = ""
+"Homepage" = "https://github.com/hus201/srf"
+"Bug Tracker" = "https://github.com/hus201/srf/issues"

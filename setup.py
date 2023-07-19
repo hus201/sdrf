@@ -6,7 +6,7 @@ setup(
     author='Hussein Anabtawi',
     description='Simple rest framework an abstraction that combines django rest framework with drf_yasg ',
     long_description='Simple rest framework is an abstraction for building rest api with well written documentations ',
-    url='https://github.com/BenjaminFranline',
+    url='https://github.com/hus201/srf',
     keywords='django, rest apis, abstraction',
     python_requires='>=3.8, <4',
     install_requires=[
