@@ -4,10 +4,10 @@ from django.urls import path
 from django.utils.decorators import classonlymethod
 from rest_framework.request import Request
 from rest_framework.response import Response
-from servicemind.infrastructure.rest import APIEndpointConfig
+from sdrf.endpoint_config import APIEndpointConfig
 from rest_framework.decorators import api_view
 from drf_yasg.utils import swagger_auto_schema
-from servicemind.infrastructure.rest.enums import ParameterType, APIParamDataType
+from sdrf.enums import ParameterType, APIParamDataType
 from rest_framework.decorators import permission_classes, authentication_classes
 
 

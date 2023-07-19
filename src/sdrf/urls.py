@@ -1,5 +1,5 @@
 from django.urls import path
-from srf.swagger_config import schema_view
+from sdrf.swagger_config import schema_view
 from django.conf import settings
 
 urlpatterns = [

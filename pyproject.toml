@@ -1,6 +1,6 @@
 [project]
-name = "srf"
-version = "0.0.1"
+name = "sdrf"
+version = "0.0.2"
 authors = [
   { name="Hussein Anabtawi", email="husainanabtawi2001@hotmail.com" },
 ]

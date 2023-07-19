@@ -1,6 +1,6 @@
 from typing import Literal, List, Union, Dict, Type
 from drf_yasg.openapi import Parameter, Schema, Response
-from servicemind.infrastructure.rest.enums import ParameterType, APIParamDataType
+from sdrf.enums import ParameterType, APIParamDataType
 from rest_framework.serializers import Serializer
 from rest_framework.authentication import BaseAuthentication
 from rest_framework.permissions import IsAuthenticated, BasePermission
