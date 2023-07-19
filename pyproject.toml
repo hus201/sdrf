@@ -1,6 +1,6 @@
 [project]
 name = "sdrf"
-version = "0.0.2"
+version = "0.0.4"
 authors = [
   { name="Hussein Anabtawi", email="husainanabtawi2001@hotmail.com" },
 ]
@@ -14,5 +14,5 @@ classifiers = [
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/hus201/srf"
-"Bug Tracker" = "https://github.com/hus201/srf/issues"
+"Homepage" = "https://github.com/hus201/sdrf"
+"Bug Tracker" = "https://github.com/hus201/sdrf/issues"
