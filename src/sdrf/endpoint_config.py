@@ -25,7 +25,7 @@ class APIEndpointConfig:
     responses: Dict = {}
     tags: List[str] = []
     request_body: Schema = None
-    base_url: str = get_settings_value('REST_APP_BASE_URL','rest')
+    base_url: str = get_settings_value('REST_APP_BASE_URL','rest/')
     rest_api_version = get_settings_value('REST_APP_VERSION','v1')
     endpoint: str = ''
     full_route: str = ''
@@ -89,7 +89,11 @@ class APIEndpointConfig:
     def get_full_route(self) -> str:
         if self.full_route != '':
             return self.full_route
-        full_route = f'{self.base_url}/{self.rest_api_version}/{self.endpoint}'
+        if self.base_url.endswith('/'):
+            base_url = self.base_url[:-1]
+        else:
+            base_url = self.base_url
+        full_route = f'{base_url}/{self.rest_api_version}/{self.endpoint}'
         path_parameters = [param for param in self.parameters if param.in_ == ParameterType.PATH_PARAM.value]
         for param in path_parameters:
             full_route = full_route + f'/<{self.get_path_param_converter(param.type)}:{param.name}>'
