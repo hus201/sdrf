@@ -30,7 +30,7 @@ urlpatterns = [
 ]
 ```
 4. check out if everything is okay by visting default swagger docs url at ``http://<your-project-url>/rest``
-![Empty Swagger UI example](https://raw.githubusercontent.com/hus201/sdrf/tree/main/docs/empty-swagger-ui.png)
+![Empty Swagger UI example](https://raw.githubusercontent.com/hus201/sdrf/main/docs/empty-swagger-ui.png)
 
 ### Configure
 now you have an rest app up and running you can configure it as you want. addtionally for django rest framework configuration and drf_yasg configuration you have our sdrf configs you can make with these default values
@@ -42,7 +42,10 @@ now you have an rest app up and running you can configure it as you want. addtio
 | REST_APP_VERSION | `v1` | the api version used in swagger docs view |
 | REST_APP_CREATOR | ``{'name': '','email': '','url': ''}`` | the contact information for communicating the rest app creator used in swagger docs view |
 | REST_APP_BASE_URL | `rest/` | the base url that the swagger docs will be viewd on and a prefix for default api endpoint |
-### Build API Endpoints
+
+## Usage
+
+### Build Single Method API Endpoints
 1. assuming you have an django app that already exsist create and an API endpoint class that inheiret APIEndPoint class for example see out hello world here
 ```python
 from sdrf.api_endpoint import APIEndpoint
@@ -96,6 +99,29 @@ urlpatterns = [
 
 4. check your output and test your api in the swagger view
 
-![An example of swagger output of APIEndPoint](https://raw.githubusercontent.com/hus201/sdrf/tree/main/docs/swagger-output-example.png)
+![An example of swagger output of APIEndPoint](https://raw.githubusercontent.com/hus201/sdrf/main/docs/swagger-output-example.png)
 
 
+### Build Model API EndPoint
+
+just like you would do in normal django rest framework and make `ViewSet` you don`t need to learn anything new to that but instead of inherting `rest_framework.viewsets.ModelViewSet` you will inherit our `ModelEndPoint`like that
+
+```python
+from .models import Person,PersonSeralizer
+from sdrf.model_endpoint import ModelEndPoint
+...
+class PersonEndPoint(ModelEndPoint):
+    queryset = Person.objects.all()
+    serializer_class = PersonSeralizer
+```
+then simply make  it as urls in `urls.py`
+```python
+from .views import PersonEndPoint
+
+urlpatterns = [
+    ...
+    PersonEndPoint.as_urls(),
+]
+
+```
+![Model EndPoint Swagger output](https://raw.githubusercontent.com/hus201/sdrf/main/docs/model-endpoint-example.png)
